@@ -1,11 +1,15 @@
-from flask import Flask, send_file
+from flask import Flask, send_file, request, Response
 import os
 
 app = Flask(__name__)
 
 @app.route('/video.mp4')
 def video():
-    return send_file('IMG_5129.MOV', mimetype='video/mp4')
+    return send_file(
+        'IMG_5129.MOV',
+        mimetype='video/mp4',
+        conditional=True
+    )
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
