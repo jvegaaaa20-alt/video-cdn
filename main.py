@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-VIDEO_FILE = 'IMG_5129.MOV'
+VIDEO_FILE = 'video.mp4'
 
 @app.route('/video.mp4')
 def video():
